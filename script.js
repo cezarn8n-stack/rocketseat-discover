@@ -8,10 +8,10 @@ function toggleMode() {
     // SUBSTITUIR A IMAGEM
     if(html.classList.contains('light')) {
     // SE TIVER LIGHT MODE, ADICIONAR A IMAGEM LIGHT
-        img.setAttribute('src', './assets/assets/avatar-light.png')
+        img.setAttribute('src', './assets/assets/catarina-modo-claro-cut.jpeg')
     
     // SE TIVER SEM LIGHT MODE, MANTER A IMAGEM NORMAL
     } else {
-        img.setAttribute('src', './assets/assets/avatar.png')
+        img.setAttribute('src', './assets/assets/catarina-modo-escuro.jpeg')
     }
 }
