@@ -1,17 +1,48 @@
+function preloadThemeImages() {
+    const images = [
+        "./assets/assets/catarina-modo-escuro.jpeg",
+        "./assets/assets/catarina-modo-claro-cut.jpeg",
+        "./assets/assets/bg-mobile.jpg",
+        "./assets/assets/bg-mobile-light.jpg",
+        "./assets/assets/bg-desktop.jpg",
+        "./assets/assets/bg-desktop-light.jpg",
+        "./assets/assets/moon-stars.svg",
+        "./assets/assets/sun.svg"
+    ]
+
+    images.forEach((imagePath) => {
+        const image = new Image()
+        image.src = imagePath
+    })
+}
+
 function toggleMode() {
     const html = document.documentElement
-    html.classList.toggle("light")
-
-    // PEGAR A TAG IMG
     const img = document.querySelector("#profile img")
 
-    // SUBSTITUIR A IMAGEM
-    if(html.classList.contains('light')) {
-    // SE TIVER LIGHT MODE, ADICIONAR A IMAGEM LIGHT
-        img.setAttribute('src', './assets/assets/catarina-modo-claro-cut.jpeg')
-    
-    // SE TIVER SEM LIGHT MODE, MANTER A IMAGEM NORMAL
+    html.classList.toggle("light")
+
+    if (html.classList.contains("light")) {
+        img.setAttribute(
+            "src",
+            "./assets/assets/catarina-modo-claro-cut.jpeg"
+        )
+
+        img.setAttribute(
+            "alt",
+            "Foto de perfil da Catarina no modo claro"
+        )
     } else {
-        img.setAttribute('src', './assets/assets/catarina-modo-escuro.jpeg')
+        img.setAttribute(
+            "src",
+            "./assets/assets/catarina-modo-escuro.jpeg"
+        )
+
+        img.setAttribute(
+            "alt",
+            "Foto de perfil da Catarina no modo escuro"
+        )
     }
 }
+
+window.addEventListener("load", preloadThemeImages)
