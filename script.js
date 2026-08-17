@@ -1,6 +1,6 @@
 /* =========================================================
    CATARINA GUERRA — LINKS OFICIAIS
-   CONTROLE DO TEMA CLARO / ESCURO
+   TEMA + OTIMIZAÇÕES MOBILE
    ========================================================= */
 
 const html = document.documentElement
@@ -16,45 +16,16 @@ const STORAGE_KEY = "catarina-theme"
 function applyTheme(theme) {
     const isLight = theme === "light"
 
-    /*
-      A classe "light" é a única coisa que precisamos
-      adicionar/remover.
-
-      Todo o restante é controlado pelo CSS.
-    */
-
     html.classList.toggle("light", isLight)
-
-
-    /*
-      Informa ao navegador qual esquema está ativo.
-      Isso ajuda elementos nativos do navegador
-      a acompanharem corretamente o tema.
-    */
 
     html.style.colorScheme = isLight
         ? "light"
         : "dark"
 
-
-    /*
-      Acessibilidade:
-      false = modo claro
-      true  = modo escuro
-    */
-
     themeSwitch.setAttribute(
         "aria-pressed",
         String(!isLight)
     )
-
-
-    /*
-      Guarda a escolha do visitante.
-
-      Assim, se ele selecionar o modo escuro
-      e atualizar a página, ela continuará escura.
-    */
 
     localStorage.setItem(
         STORAGE_KEY,
@@ -81,17 +52,12 @@ function toggleTheme() {
 
 
 /* =========================================================
-   CARREGA A PREFERÊNCIA SALVA
+   CARREGA O TEMA SALVO
    ========================================================= */
 
 function loadSavedTheme() {
     const savedTheme =
         localStorage.getItem(STORAGE_KEY)
-
-    /*
-      Se o visitante já escolheu um tema antes,
-      usamos essa escolha.
-    */
 
     if (
         savedTheme === "light" ||
@@ -101,17 +67,46 @@ function loadSavedTheme() {
         return
     }
 
-
-    /*
-      Se nunca escolheu nada,
-      mantemos o modo claro como padrão.
-
-      Isso acompanha:
-      <html class="light">
-      presente no index.html.
-    */
-
     applyTheme("light")
+}
+
+
+/* =========================================================
+   LINKS — OTIMIZAÇÃO MOBILE
+   ========================================================= */
+
+const mobileViewport =
+    window.matchMedia("(max-width: 699px)")
+
+
+function configureExternalLinks() {
+    const links =
+        document.querySelectorAll(
+            ".link-card, .social-link"
+        )
+
+    links.forEach((link) => {
+
+        /*
+           No celular:
+           navegação no mesmo contexto.
+        */
+
+        if (mobileViewport.matches) {
+            link.removeAttribute("target")
+            return
+        }
+
+        /*
+           No computador:
+           continua abrindo em nova aba.
+        */
+
+        link.setAttribute(
+            "target",
+            "_blank"
+        )
+    })
 }
 
 
@@ -125,8 +120,20 @@ themeSwitch.addEventListener(
 )
 
 
+if (
+    typeof mobileViewport.addEventListener === "function"
+) {
+    mobileViewport.addEventListener(
+        "change",
+        configureExternalLinks
+    )
+}
+
+
 /* =========================================================
    INICIALIZAÇÃO
    ========================================================= */
 
 loadSavedTheme()
+
+configureExternalLinks()
