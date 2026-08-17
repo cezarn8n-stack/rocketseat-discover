@@ -1,48 +1,132 @@
-function preloadThemeImages() {
-    const images = [
-        "./assets/assets/catarina-modo-escuro.jpeg",
-        "./assets/assets/catarina-modo-claro-cut.jpeg",
-        "./assets/assets/bg-mobile.jpg",
-        "./assets/assets/bg-mobile-light.jpg",
-        "./assets/assets/bg-desktop.jpg",
-        "./assets/assets/bg-desktop-light.jpg",
-        "./assets/assets/moon-stars.svg",
-        "./assets/assets/sun.svg"
-    ]
+/* =========================================================
+   CATARINA GUERRA — LINKS OFICIAIS
+   CONTROLE DO TEMA CLARO / ESCURO
+   ========================================================= */
 
-    images.forEach((imagePath) => {
-        const image = new Image()
-        image.src = imagePath
-    })
+const html = document.documentElement
+const themeSwitch = document.querySelector("#theme-switch")
+
+const STORAGE_KEY = "catarina-theme"
+
+
+/* =========================================================
+   APLICA O TEMA
+   ========================================================= */
+
+function applyTheme(theme) {
+    const isLight = theme === "light"
+
+    /*
+      A classe "light" é a única coisa que precisamos
+      adicionar/remover.
+
+      Todo o restante é controlado pelo CSS.
+    */
+
+    html.classList.toggle("light", isLight)
+
+
+    /*
+      Informa ao navegador qual esquema está ativo.
+      Isso ajuda elementos nativos do navegador
+      a acompanharem corretamente o tema.
+    */
+
+    html.style.colorScheme = isLight
+        ? "light"
+        : "dark"
+
+
+    /*
+      Acessibilidade:
+      false = modo claro
+      true  = modo escuro
+    */
+
+    themeSwitch.setAttribute(
+        "aria-pressed",
+        String(!isLight)
+    )
+
+
+    /*
+      Guarda a escolha do visitante.
+
+      Assim, se ele selecionar o modo escuro
+      e atualizar a página, ela continuará escura.
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        theme
+    )
 }
 
-function toggleMode() {
-    const html = document.documentElement
-    const img = document.querySelector("#profile img")
 
-    html.classList.toggle("light")
+/* =========================================================
+   ALTERNA O TEMA
+   ========================================================= */
 
-    if (html.classList.contains("light")) {
-        img.setAttribute(
-            "src",
-            "./assets/assets/catarina-modo-claro-cut.jpeg"
-        )
+function toggleTheme() {
+    const isCurrentlyLight =
+        html.classList.contains("light")
 
-        img.setAttribute(
-            "alt",
-            "Foto de perfil da Catarina no modo claro"
-        )
-    } else {
-        img.setAttribute(
-            "src",
-            "./assets/assets/catarina-modo-escuro.jpeg"
-        )
+    const nextTheme =
+        isCurrentlyLight
+            ? "dark"
+            : "light"
 
-        img.setAttribute(
-            "alt",
-            "Foto de perfil da Catarina no modo escuro"
-        )
+    applyTheme(nextTheme)
+}
+
+
+/* =========================================================
+   CARREGA A PREFERÊNCIA SALVA
+   ========================================================= */
+
+function loadSavedTheme() {
+    const savedTheme =
+        localStorage.getItem(STORAGE_KEY)
+
+    /*
+      Se o visitante já escolheu um tema antes,
+      usamos essa escolha.
+    */
+
+    if (
+        savedTheme === "light" ||
+        savedTheme === "dark"
+    ) {
+        applyTheme(savedTheme)
+        return
     }
+
+
+    /*
+      Se nunca escolheu nada,
+      mantemos o modo claro como padrão.
+
+      Isso acompanha:
+      <html class="light">
+      presente no index.html.
+    */
+
+    applyTheme("light")
 }
 
-window.addEventListener("load", preloadThemeImages)
+
+/* =========================================================
+   EVENTOS
+   ========================================================= */
+
+themeSwitch.addEventListener(
+    "click",
+    toggleTheme
+)
+
+
+/* =========================================================
+   INICIALIZAÇÃO
+   ========================================================= */
+
+loadSavedTheme()

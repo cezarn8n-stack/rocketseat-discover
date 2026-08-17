@@ -1,71 +1,324 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="light">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevLinks</title>
-        <link rel="stylesheet" href="./style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="container">
-            <div id="profile">
-                <img src="./assets/assets/catarina-modo-claro-cut.jpeg" alt="Foto de perfil modo claro">
-                <p>@catarinaguerrarr</p>
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Links oficiais de Catarina Guerra."
+    >
+
+    <title>Catarina Guerra | Links Oficiais</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         FUNDO DECORATIVO
+         ========================= -->
+
+    <div class="background-effects" aria-hidden="true">
+        <div class="background-effects__blue"></div>
+        <div class="background-effects__pink"></div>
+
+        <img
+            class="campaign-heart"
+            src="./assets/assets/coracao-campanha.png"
+            alt=""
+        >
+    </div>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+         ========================= -->
+
+    <main id="container">
+
+        <!-- PERFIL -->
+
+        <header id="profile">
+
+            <div class="profile-image-wrapper">
+
+                <img
+                    class="profile-image"
+                    src="./assets/assets/perfil-catarina-5x5.png"
+                    alt="Catarina Guerra, candidata a Deputada Estadual, número 44188"
+                >
+
             </div>
 
-            <div id="switch" onclick="toggleMode()">
-                <button></button>
-                <span></span>
-            </div>
+            <p class="profile-username">
+                @catarinaguerrarr
+            </p>
 
-            <ul>
-                <li>
-                    <a href="https://www.instagram.com/p/DaXufBDR3Bt/" target="_blank">
-                        Quem sou eu
+        </header>
+
+
+        <!-- =========================
+             SWITCH CLARO / ESCURO
+             ========================= -->
+
+        <div class="theme-switch-wrapper">
+
+            <button
+                id="theme-switch"
+                type="button"
+                aria-label="Alternar entre modo claro e escuro"
+                aria-pressed="false"
+            >
+
+                <span class="theme-switch__option theme-switch__option--light">
+                    <ion-icon name="sunny-outline"></ion-icon>
+                </span>
+
+                <span class="theme-switch__option theme-switch__option--dark">
+                    <ion-icon name="moon-outline"></ion-icon>
+                </span>
+
+                <span
+                    class="theme-switch__indicator"
+                    aria-hidden="true"
+                ></span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             LINKS PRINCIPAIS
+             ========================= -->
+
+        <nav
+            class="links-section"
+            aria-label="Links principais de Catarina Guerra"
+        >
+
+            <ul class="links-list">
+
+                <!-- QUEM SOU EU -->
+
+                <li class="link-item">
+
+                    <a
+                        class="link-card"
+                        href="https://www.instagram.com/p/DaXufBDR3Bt/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="link-card__icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+
+                        <span class="link-card__label">
+                            Quem sou eu
+                        </span>
+
+                        <span
+                            class="link-card__arrow"
+                            aria-hidden="true"
+                        >
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </span>
+
                     </a>
+
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/p/Da3RD6uEXRg/?img_index=1" target="_blank">
-                        Leis para MULHERES!
+
+
+                <!-- LEIS PARA MULHERES -->
+
+                <li class="link-item">
+
+                    <a
+                        class="link-card"
+                        href="https://www.instagram.com/p/Da3RD6uEXRg/?img_index=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="link-card__icon">
+                            <ion-icon name="scale-outline"></ion-icon>
+                        </span>
+
+                        <span class="link-card__label">
+                            Leis para <strong>MULHERES!</strong>
+                        </span>
+
+                        <span
+                            class="link-card__arrow"
+                            aria-hidden="true"
+                        >
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </span>
+
                     </a>
+
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/p/DagERHTxt2e/" target="_blank">
-                        Para a juventude
+
+
+                <!-- JUVENTUDE -->
+
+                <li class="link-item">
+
+                    <a
+                        class="link-card"
+                        href="https://www.instagram.com/p/DagERHTxt2e/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="link-card__icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+
+                        <span class="link-card__label">
+                            Para a juventude
+                        </span>
+
+                        <span
+                            class="link-card__arrow"
+                            aria-hidden="true"
+                        >
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </span>
+
                     </a>
+
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/p/DaGI06IAu3m/" target="_blank">
-                        Empreendedorismo
+
+
+                <!-- EMPREENDEDORISMO -->
+
+                <li class="link-item">
+
+                    <a
+                        class="link-card"
+                        href="https://www.instagram.com/p/DaGI06IAu3m/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="link-card__icon">
+                            <ion-icon name="rocket-outline"></ion-icon>
+                        </span>
+
+                        <span class="link-card__label">
+                            Empreendedorismo
+                        </span>
+
+                        <span
+                            class="link-card__arrow"
+                            aria-hidden="true"
+                        >
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </span>
+
                     </a>
+
                 </li>
+
             </ul>
 
-            <div id="social-links">
-                <a href="https://www.instagram.com/catarinaguerrarr/" target="_blank">                
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
+        </nav>
 
-                <a href="https://www.threads.com/@catarinaguerrarr?xmt=AQG0C0bqS_HLCocqNeJjBXg-IladMTB-a9VUrbajmw9E_ZI" target="_blank">                
-                    <ion-icon name="logo-threads"></ion-icon>
-                </a>
-            </div>
 
-            <footer>
-                Feito com <ion-icon name="heart"></ion-icon> por
-                <a href="https://wa.me/559591555450?text=Oi%2C%20Cezar%21%20Quero%20uma%20p%C3%A1gina%20igual%20%C3%A0%20que%20voc%C3%AA%20fez%20para%20a%20Deputada%20Catarina%20Guerra."
+        <!-- =========================
+             REDES SOCIAIS
+             ========================= -->
+
+        <div
+            id="social-links"
+            aria-label="Redes sociais de Catarina Guerra"
+        >
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/catarinaguerrarr/"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+                aria-label="Instagram de Catarina Guerra"
+            >
+
+                <ion-icon name="logo-instagram"></ion-icon>
+
+            </a>
+
+
+            <a
+                class="social-link"
+                href="https://www.threads.com/@catarinaguerrarr?xmt=AQG0C0bqS_HLCocqNeJjBXg-IladMTB-a9VUrbajmw9E_ZI"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Threads de Catarina Guerra"
+            >
+
+                <ion-icon name="logo-threads"></ion-icon>
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             CRÉDITO
+             ========================= -->
+
+        <footer class="site-footer">
+
+            <p>
+                Feito com
+                <ion-icon name="heart"></ion-icon>
+                por
+
+                <a
+                    href="https://wa.me/559591555450?text=Oi%2C%20Cezar%21%20Quero%20uma%20p%C3%A1gina%20igual%20%C3%A0%20que%20voc%C3%AA%20fez%20para%20a%20Deputada%20Catarina%20Guerra."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Cezar Monteiro
                 </a>
-            </footer>
-        </div>
-        <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+            </p>
 
-        <script src="./script.js"></script>
-    </body>
+        </footer>
+
+    </main>
+
+
+    <!-- IONICONS -->
+
+    <script
+        type="module"
+        src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+        nomodule
+        src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
+    ></script>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./script.js"></script>
+
+</body>
 </html>

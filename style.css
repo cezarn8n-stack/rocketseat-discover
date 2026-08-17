@@ -1,193 +1,1146 @@
+/* =========================================================
+   CATARINA GUERRA — LINKS OFICIAIS
+   Redesign 2026
+
+   MESMO LAYOUT NOS DOIS TEMAS.
+   Apenas cores, contraste e atmosfera são alterados.
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --text-color: white;
-    --bg-color: #121016;
-    --bg-url: url('./assets/assets/bg-mobile.jpg');
-    --stroke-color: rgba(255, 255, 255, 0.5);
-    --surface-color: rgba(255, 255, 255, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.2);
-    --highlight-color: rgba(255, 255, 255, 0.2);
-    --switch-bg-url: url(./assets/assets/moon-stars.svg);
-}
-
-.light {
-    --text-color: black;
-    --bg-color: #f8f6f8;
-    --bg-url: url('./assets/assets/bg-mobile-light.jpg');
-    --stroke-color: rgba(0, 0, 0, 0.5);
-    --surface-color: rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.2);    
-    --highlight-color: rgba(0, 0, 0, 0.1);
-    --switch-bg-url: url(./assets/assets/sun.svg);
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
-    background-image: var(--bg-url);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-
     min-height: 100vh;
+    min-height: 100svh;
 
-    transition: background-color 0.25s ease;
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease;
 }
 
-body * {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-color);
+button,
+a {
+    font: inherit;
 }
+
+button {
+    border: 0;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   PALETA — MODO ESCURO
+   ========================================================= */
+
+:root {
+
+    /* FUNDO */
+
+    --page-bg: #04152f;
+
+    --page-gradient:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(22, 76, 141, 0.34) 0%,
+            rgba(7, 31, 70, 0.16) 31%,
+            transparent 58%
+        ),
+        linear-gradient(
+            180deg,
+            #061a3a 0%,
+            #03142f 46%,
+            #021127 100%
+        );
+
+
+    /* TEXTO */
+
+    --text-primary: #f8fbff;
+    --text-secondary: rgba(235, 243, 255, 0.72);
+
+
+    /* CARDS */
+
+    --card-bg:
+        linear-gradient(
+            135deg,
+            rgba(17, 43, 82, 0.94),
+            rgba(5, 27, 61, 0.96)
+        );
+
+    --card-border: rgba(157, 184, 220, 0.28);
+
+    --card-shadow:
+        0 18px 44px rgba(0, 5, 20, 0.22);
+
+    --card-hover-bg:
+        linear-gradient(
+            135deg,
+            rgba(24, 56, 101, 0.98),
+            rgba(8, 35, 74, 0.98)
+        );
+
+
+    /* ÍCONES */
+
+    --icon-bg: rgba(238, 43, 139, 0.09);
+    --icon-color: #f02d8b;
+
+    --arrow-color: #f02d8b;
+
+
+    /* SWITCH */
+
+    --switch-bg: rgba(7, 30, 65, 0.92);
+    --switch-border: rgba(167, 194, 231, 0.25);
+
+    --switch-indicator-bg:
+        linear-gradient(
+            145deg,
+            rgba(16, 52, 96, 0.98),
+            rgba(8, 34, 72, 0.98)
+        );
+
+    --switch-indicator-shadow:
+        0 7px 18px rgba(0, 4, 18, 0.22);
+
+    --sun-color: rgba(214, 225, 241, 0.58);
+    --moon-color: #f4f7fc;
+
+
+    /* SOCIAL */
+
+    --social-bg: rgba(12, 39, 77, 0.88);
+    --social-border: rgba(169, 196, 232, 0.22);
+    --social-icon: #ffffff;
+
+    --social-shadow:
+        0 12px 32px rgba(0, 5, 20, 0.2);
+
+
+    /* PERFIL */
+
+    --profile-ring: rgba(255, 255, 255, 0.92);
+
+    --profile-shadow:
+        0 22px 55px rgba(0, 7, 24, 0.26);
+
+
+    /* CORAÇÃO */
+
+    --heart-opacity: 0.64;
+    --heart-blur: 15px;
+    --heart-saturation: 1.05;
+
+
+    /* RODAPÉ */
+
+    --footer-color: rgba(224, 234, 248, 0.48);
+    --footer-link: rgba(239, 245, 255, 0.68);
+}
+
+
+/* =========================================================
+   PALETA — MODO CLARO
+   ========================================================= */
+
+html.light {
+
+    /* FUNDO */
+
+    --page-bg: #f3f8fc;
+
+    --page-gradient:
+        radial-gradient(
+            circle at 11% 8%,
+            rgba(76, 166, 219, 0.11) 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 88% 24%,
+            rgba(238, 43, 139, 0.08) 0%,
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #f6fbff 0%,
+            #f9fbfd 50%,
+            #eef6fb 100%
+        );
+
+
+    /* TEXTO */
+
+    --text-primary: #071a3a;
+    --text-secondary: rgba(7, 26, 58, 0.64);
+
+
+    /* CARDS */
+
+    --card-bg:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(249, 252, 254, 0.92)
+        );
+
+    --card-border: rgba(28, 79, 128, 0.11);
+
+    --card-shadow:
+        0 16px 38px rgba(22, 58, 94, 0.09);
+
+    --card-hover-bg:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5faff
+        );
+
+
+    /* ÍCONES */
+
+    --icon-bg: rgba(238, 43, 139, 0.065);
+    --icon-color: #e92b88;
+
+    --arrow-color: #ec2f8d;
+
+
+    /* SWITCH */
+
+    --switch-bg: rgba(255, 255, 255, 0.72);
+
+    --switch-border:
+        rgba(45, 91, 131, 0.12);
+
+    --switch-indicator-bg:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f9fbfd
+        );
+
+    --switch-indicator-shadow:
+        0 7px 18px rgba(28, 66, 100, 0.12);
+
+    --sun-color: #ef2d8b;
+    --moon-color: rgba(22, 37, 61, 0.62);
+
+
+    /* SOCIAL */
+
+    --social-bg: rgba(255, 255, 255, 0.88);
+
+    --social-border:
+        rgba(25, 68, 109, 0.1);
+
+    --social-icon: #071a3a;
+
+    --social-shadow:
+        0 11px 27px rgba(27, 61, 93, 0.1);
+
+
+    /* PERFIL */
+
+    --profile-ring: rgba(255, 255, 255, 0.96);
+
+    --profile-shadow:
+        0 18px 48px rgba(25, 62, 96, 0.12);
+
+
+    /* CORAÇÃO */
+
+    --heart-opacity: 0.43;
+    --heart-blur: 17px;
+    --heart-saturation: 0.94;
+
+
+    /* RODAPÉ */
+
+    --footer-color: rgba(7, 26, 58, 0.42);
+    --footer-link: rgba(7, 26, 58, 0.64);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    position: relative;
+
+    color: var(--text-primary);
+
+    background-color: var(--page-bg);
+    background-image: var(--page-gradient);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+
+/* =========================================================
+   EFEITOS DE FUNDO
+   ========================================================= */
+
+.background-effects {
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* AZUL SUAVE SUPERIOR */
+
+.background-effects__blue {
+    position: absolute;
+
+    top: -140px;
+    left: 50%;
+
+    width: 520px;
+    height: 420px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(54, 145, 208, 0.13) 0%,
+            transparent 70%
+        );
+
+    filter: blur(45px);
+}
+
+
+/* ROSA MUITO DISCRETO */
+
+.background-effects__pink {
+    position: absolute;
+
+    top: 22%;
+    right: -180px;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 46, 139, 0.11) 0%,
+            transparent 70%
+        );
+
+    filter: blur(65px);
+}
+
+
+/* =========================================================
+   CORAÇÃO DA CAMPANHA
+   ========================================================= */
+
+.campaign-heart {
+    position: absolute;
+
+    z-index: -1;
+
+    width: min(580px, 125vw);
+    height: auto;
+
+    right: -180px;
+    bottom: -120px;
+
+    opacity: var(--heart-opacity);
+
+    filter:
+        blur(var(--heart-blur))
+        saturate(var(--heart-saturation));
+
+    transform:
+        rotate(-8deg)
+        scale(1.12);
+
+    transform-origin: center;
+
+    transition:
+        opacity 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
 #container {
-    width: 100%;
-    max-width: 588px;
-    /* margin-right: auto;
-    margin-left: auto; */
-    margin: 56px auto 0px;
-    padding: 0px 24px;
-}
-
-/* PROFILE */
-
-#profile {
-    text-align: center;
-    padding: 24px;
-}
-
-#profile img {
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    /* display: block;
-    border: 1px solid white;
-    margin: auto; */
-}
-
-#profile p {
-    font-weight: 500;
-    line-height: 24px;
-    margin-top: 8px;
-}
-
-/* SWITCH */
-
-#switch {
     position: relative;
-    width: 64px;
-    margin: 4px auto;
-}
-
-#switch button {
-    width: 32px;
-    height: 32px;
-
-    background: #ffffff var(--switch-bg-url) no-repeat center;
-    border: 0;
-    border-radius: 50%;
-
-    position: absolute;
-    left: 0;
-    top: 50%;
     z-index: 1;
 
-    transform: translateY(-50%) translateX(0);
-    transition: transform 0.25s ease;
+    width: min(100% - 32px, 470px);
 
-    will-change: transform;
+    margin: 0 auto;
+
+    padding:
+        40px
+        0
+        calc(30px + env(safe-area-inset-bottom));
 }
 
-#switch button:hover {
-    outline: 8px solid var(--highlight-color);
-}
 
-.light #switch button {
-    transform: translateY(-50%) translateX(32px);
-}
+/* =========================================================
+   PERFIL
+   ========================================================= */
 
-#switch span {
-    display: block;
-    width: 64px;
-    height: 24px;
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 9999px;
-}
-
-/* LINKS */
-
-ul {
-    list-style: none;
+#profile {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 24px 0px;
-}
-
-ul li a {
-    display: flex;
-    padding: 16px 24px;
     align-items: center;
+
+    text-align: center;
+}
+
+
+/* CONTAINER DA FOTO */
+
+.profile-image-wrapper {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: clamp(205px, 59vw, 252px);
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    padding: 6px;
+
+    background: var(--profile-ring);
+
+    box-shadow: var(--profile-shadow);
+
+    transition:
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
+}
+
+
+/* IMAGEM 5X5 */
+
+.profile-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* USERNAME */
+
+.profile-username {
+    margin-top: 27px;
+
+    color: var(--text-primary);
+
+    font-size: clamp(1.55rem, 7vw, 2rem);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.045em;
+
+    transition: color 0.35s ease;
+}
+
+
+/* =========================================================
+   SWITCH
+   ========================================================= */
+
+.theme-switch-wrapper {
+    display: flex;
     justify-content: center;
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    border-radius: 8px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+
+    margin-top: 27px;
+    margin-bottom: 35px;
+}
+
+
+#theme-switch {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    width: 116px;
+    height: 50px;
+
+    padding: 4px;
+
+    cursor: pointer;
+
+    color: var(--text-primary);
+
+    border:
+        1px solid
+        var(--switch-border);
+
+    border-radius: 999px;
+
+    background: var(--switch-bg);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* BOLHA DO SWITCH */
+
+.theme-switch__indicator {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 4px;
+    left: 4px;
+
+    width: 54px;
+    height: 40px;
+
+    border-radius: 999px;
+
+    background: var(--switch-indicator-bg);
+
+    box-shadow:
+        var(--switch-indicator-shadow);
+
+    transform: translateX(54px);
+
+    transition:
+        transform 0.32s
+        cubic-bezier(0.22, 1, 0.36, 1),
+
+        background 0.35s ease,
+
+        box-shadow 0.35s ease;
+}
+
+
+/* CLARO = BOLHA À ESQUERDA */
+
+html.light .theme-switch__indicator {
+    transform: translateX(0);
+}
+
+
+/* ÍCONES */
+
+.theme-switch__option {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 23px;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.theme-switch__option--light {
+    color: var(--sun-color);
+}
+
+
+.theme-switch__option--dark {
+    color: var(--moon-color);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.links-section {
+    position: relative;
+    z-index: 2;
+}
+
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    list-style: none;
+}
+
+
+.link-item {
+    width: 100%;
+}
+
+
+/* CARD */
+
+.link-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        52px
+        minmax(0, 1fr)
+        32px;
+
+    align-items: center;
+
+    min-height: 78px;
+
+    padding:
+        11px
+        18px
+        11px
+        14px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
     text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s;
+
+    border:
+        1px solid
+        var(--card-border);
+
+    border-radius: 24px;
+
+    background: var(--card-bg);
+
+    box-shadow: var(--card-shadow);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.22s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-ul li a:hover {
-    background: var(--surface-color-hover);
-    border: 1.5px solid var(--text-color);
+
+/* PEQUENO ACENTO LATERAL */
+
+.link-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20%;
+
+    width: 3px;
+    height: 60%;
+
+    border-radius:
+        0
+        999px
+        999px
+        0;
+
+    background: #eb2e8b;
+
+    opacity: 0.75;
 }
 
-/* SOCIAL LINKS */
+
+/* TERCEIRO CARD */
+
+.link-item:nth-child(3)
+.link-card::before {
+    background: #32a8df;
+}
+
+
+/* QUARTO CARD */
+
+.link-item:nth-child(4)
+.link-card::before {
+    background: #ffc929;
+}
+
+
+/* HOVER */
+
+.link-card:hover {
+    transform: translateY(-2px);
+
+    background: var(--card-hover-bg);
+
+    box-shadow:
+        0 18px 42px
+        rgba(8, 34, 70, 0.14);
+}
+
+
+/* ACTIVE */
+
+.link-card:active {
+    transform:
+        translateY(0)
+        scale(0.988);
+}
+
+
+/* FOCO POR TECLADO */
+
+.link-card:focus-visible,
+.social-link:focus-visible,
+#theme-switch:focus-visible {
+    outline:
+        3px solid
+        rgba(238, 43, 139, 0.34);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   ÍCONE DO CARD
+   ========================================================= */
+
+.link-card__icon {
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: var(--icon-color);
+
+    font-size: 25px;
+
+    border-radius: 50%;
+
+    background: var(--icon-bg);
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* =========================================================
+   LABEL DO CARD
+   ========================================================= */
+
+.link-card__label {
+    min-width: 0;
+
+    padding:
+        0
+        10px;
+
+    color: var(--text-primary);
+
+    font-size: clamp(
+        1rem,
+        4.4vw,
+        1.12rem
+    );
+
+    font-weight: 600;
+
+    line-height: 1.22;
+
+    text-align: center;
+
+    letter-spacing: -0.02em;
+
+    transition: color 0.35s ease;
+}
+
+
+.link-card__label strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SETA
+   ========================================================= */
+
+.link-card__arrow {
+    display: grid;
+    place-items: center;
+
+    color: var(--arrow-color);
+
+    font-size: 25px;
+
+    transition:
+        transform 0.22s ease,
+        color 0.3s ease;
+}
+
+
+.link-card:hover
+.link-card__arrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
 
 #social-links {
-    display: flex;
-    justify-content: center;
-    padding: 24px 0px;
-    font-size: 24px;
-}
+    position: relative;
+    z-index: 3;
 
-#social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+
+    gap: 17px;
+
+    margin-top: 29px;
+}
+
+
+.social-link {
+    display: grid;
+    place-items: center;
+
+    width: 56px;
+    height: 56px;
+
+    color: var(--social-icon);
+
+    font-size: 27px;
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        var(--social-border);
+
     border-radius: 50%;
-    transition: background-color 0.2s;
+
+    background: var(--social-bg);
+
+    box-shadow: var(--social-shadow);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.22s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
-#social-links a:hover {
-    background-color: var(--highlight-color);
+
+.social-link:hover {
+    transform:
+        translateY(-3px)
+        scale(1.035);
 }
 
-footer {
-    padding: 24px 0px;
+
+.social-link:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 31px;
+
+    padding-bottom: 4px;
+
     text-align: center;
-    font-size: 14px;
 }
 
-/* MEDIA QUERIES */
 
-@media (min-width: 700px) {
-    :root {
-        --bg-url: url(./assets/assets/bg-desktop.jpg);
+.site-footer p {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+    color: var(--footer-color);
+
+    font-size: 0.72rem;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    transition: color 0.35s ease;
+}
+
+
+.site-footer ion-icon {
+    color: #eb2e8b;
+
+    font-size: 12px;
+}
+
+
+.site-footer a {
+    color: var(--footer-link);
+
+    font-weight: 500;
+
+    text-underline-offset: 3px;
+
+    transition: color 0.25s ease;
+}
+
+
+.site-footer a:hover {
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   TRANSIÇÃO DE TEMA
+   ========================================================= */
+
+.profile-image-wrapper,
+.profile-username,
+.link-card,
+.link-card__label,
+.link-card__icon,
+.link-card__arrow,
+.social-link,
+.site-footer p,
+.site-footer a {
+    transition-duration: 0.32s;
+}
+
+
+/* =========================================================
+   CELULARES MENORES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    #container {
+        width: min(
+            100% - 24px,
+            470px
+        );
+
+        padding-top: 29px;
     }
 
-    .light {
-        --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+
+    .profile-image-wrapper {
+        width:
+            clamp(
+                190px,
+                57vw,
+                220px
+            );
+    }
+
+
+    .profile-username {
+        margin-top: 23px;
+
+        font-size: 1.48rem;
+    }
+
+
+    .theme-switch-wrapper {
+        margin-top: 24px;
+        margin-bottom: 30px;
+    }
+
+
+    .link-card {
+        min-height: 72px;
+
+        grid-template-columns:
+            48px
+            minmax(0, 1fr)
+            28px;
+
+        padding:
+            10px
+            14px
+            10px
+            12px;
+
+        border-radius: 21px;
+    }
+
+
+    .link-card__icon {
+        width: 41px;
+        height: 41px;
+
+        font-size: 23px;
+    }
+
+
+    .link-card__label {
+        font-size: 0.96rem;
+    }
+
+
+    .link-card__arrow {
+        font-size: 22px;
+    }
+
+
+    .campaign-heart {
+        width: 145vw;
+
+        right: -62vw;
+        bottom: -110px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS / TELAS GRANDES
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    #container {
+        width: min(
+            100% - 48px,
+            480px
+        );
+
+        padding-top: 48px;
+    }
+
+
+    .profile-image-wrapper {
+        width: 245px;
+    }
+
+
+    .campaign-heart {
+        width: 620px;
+
+        right:
+            calc(
+                50% - 410px
+            );
+
+        bottom: -150px;
+    }
+}
+
+
+/* =========================================================
+   HOVER APENAS EM DISPOSITIVOS COM MOUSE
+   ========================================================= */
+
+@media (hover: none) {
+
+    .link-card:hover {
+        transform: none;
+
+        background: var(--card-bg);
+
+        box-shadow: var(--card-shadow);
+    }
+
+
+    .social-link:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE — MENOS MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
     }
 }
