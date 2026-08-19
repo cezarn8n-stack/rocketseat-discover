@@ -5,7 +5,7 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
     <meta
@@ -13,13 +13,24 @@
         content="Links oficiais de Catarina Guerra."
     >
 
+    <meta name="theme-color" content="#ef4a9a">
+
     <title>Catarina Guerra | Links Oficiais</title>
 
+    <!-- FOTO PRINCIPAL: CARREGAMENTO PRIORITÁRIO -->
+    <link
+        rel="preload"
+        as="image"
+        href="./assets/assets/perfil-catarina-5x5.webp"
+        fetchpriority="high"
+    >
+
+    <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
@@ -28,29 +39,38 @@
 
 <body>
 
-    <!-- =========================
+    <!-- ==================================================
          FUNDO DECORATIVO
-         ========================= -->
+         ================================================== -->
 
     <div class="background-effects" aria-hidden="true">
-        <div class="background-effects__blue"></div>
-        <div class="background-effects__pink"></div>
+
+        <div class="background-glow background-glow--one"></div>
+        <div class="background-glow background-glow--two"></div>
 
         <img
             class="campaign-heart"
-            src="./assets/assets/coracao-campanha.png"
+            src="./assets/assets/coracao-campanha-nitido.png"
             alt=""
+            width="1400"
+            height="1225"
+            decoding="async"
+            fetchpriority="high"
         >
+
     </div>
 
 
-    <!-- =========================
-         CONTEÚDO PRINCIPAL
-         ========================= -->
+    <!-- ==================================================
+         CONTEÚDO
+         ================================================== -->
 
     <main id="container">
 
-        <!-- PERFIL -->
+
+        <!-- ==================================================
+             PERFIL
+             ================================================== -->
 
         <header id="profile">
 
@@ -58,8 +78,12 @@
 
                 <img
                     class="profile-image"
-                    src="./assets/assets/perfil-catarina-5x5.png"
+                    src="./assets/assets/perfil-catarina-5x5.webp"
                     alt="Catarina Guerra, candidata a Deputada Estadual, número 44188"
+                    width="640"
+                    height="640"
+                    fetchpriority="high"
+                    decoding="async"
                 >
 
             </div>
@@ -71,9 +95,9 @@
         </header>
 
 
-        <!-- =========================
-             SWITCH CLARO / ESCURO
-             ========================= -->
+        <!-- ==================================================
+             SWITCH
+             ================================================== -->
 
         <div class="theme-switch-wrapper">
 
@@ -84,29 +108,38 @@
                 aria-pressed="false"
             >
 
-                <span class="theme-switch__option theme-switch__option--light">
-                    <ion-icon name="sunny-outline"></ion-icon>
-                </span>
-
-                <span class="theme-switch__option theme-switch__option--dark">
-                    <ion-icon name="moon-outline"></ion-icon>
-                </span>
-
                 <span
                     class="theme-switch__indicator"
                     aria-hidden="true"
                 ></span>
+
+                <span
+                    class="theme-switch__option theme-switch__option--light"
+                    aria-hidden="true"
+                >
+                    <ion-icon name="sunny-outline"></ion-icon>
+                </span>
+
+                <span
+                    class="theme-switch__option theme-switch__option--dark"
+                    aria-hidden="true"
+                >
+                    <ion-icon name="moon-outline"></ion-icon>
+                </span>
 
             </button>
 
         </div>
 
 
-        <!-- =========================
-            CTA — MOLDURA 44188
-        ========================= -->
+        <!-- ==================================================
+             CTA PRINCIPAL — MOLDURA 44188
+             ================================================== -->
 
-        <div class="frame-cta-wrapper">
+        <section
+            class="featured-section"
+            aria-label="Personalize sua foto"
+        >
 
             <a
                 class="link-card frame-cta"
@@ -115,6 +148,8 @@
                 rel="noopener noreferrer"
                 aria-label="Usar a moldura 44188 na sua foto"
             >
+
+                <span class="link-card__accent"></span>
 
                 <span class="link-card__icon frame-cta__icon">
                     <ion-icon name="image-outline"></ion-icon>
@@ -143,12 +178,12 @@
 
             </a>
 
-        </div>
+        </section>
 
 
-        <!-- =========================
-             LINKS PRINCIPAIS
-             ========================= -->
+        <!-- ==================================================
+             LINKS
+             ================================================== -->
 
         <nav
             class="links-section"
@@ -157,9 +192,10 @@
 
             <ul class="links-list">
 
+
                 <!-- QUEM SOU EU -->
 
-                <li class="link-item">
+                <li class="link-item link-item--pink">
 
                     <a
                         class="link-card"
@@ -167,6 +203,8 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
+                        <span class="link-card__accent"></span>
 
                         <span class="link-card__icon">
                             <ion-icon name="person-outline"></ion-icon>
@@ -190,7 +228,7 @@
 
                 <!-- LEIS PARA MULHERES -->
 
-                <li class="link-item">
+                <li class="link-item link-item--pink">
 
                     <a
                         class="link-card"
@@ -198,6 +236,8 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
+                        <span class="link-card__accent"></span>
 
                         <span class="link-card__icon">
                             <ion-icon name="scale-outline"></ion-icon>
@@ -221,7 +261,7 @@
 
                 <!-- JUVENTUDE -->
 
-                <li class="link-item">
+                <li class="link-item link-item--blue">
 
                     <a
                         class="link-card"
@@ -229,6 +269,8 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
+                        <span class="link-card__accent"></span>
 
                         <span class="link-card__icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -252,7 +294,7 @@
 
                 <!-- EMPREENDEDORISMO -->
 
-                <li class="link-item">
+                <li class="link-item link-item--yellow">
 
                     <a
                         class="link-card"
@@ -260,6 +302,8 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
+                        <span class="link-card__accent"></span>
 
                         <span class="link-card__icon">
                             <ion-icon name="rocket-outline"></ion-icon>
@@ -285,9 +329,9 @@
         </nav>
 
 
-        <!-- =========================
+        <!-- ==================================================
              REDES SOCIAIS
-             ========================= -->
+             ================================================== -->
 
         <div
             id="social-links"
@@ -301,9 +345,7 @@
                 rel="noopener noreferrer"
                 aria-label="Instagram de Catarina Guerra"
             >
-
                 <ion-icon name="logo-instagram"></ion-icon>
-
             </a>
 
 
@@ -314,17 +356,15 @@
                 rel="noopener noreferrer"
                 aria-label="Threads de Catarina Guerra"
             >
-
                 <ion-icon name="logo-threads"></ion-icon>
-
             </a>
 
         </div>
 
 
-        <!-- =========================
-             CRÉDITO
-             ========================= -->
+        <!-- ==================================================
+             RODAPÉ
+             ================================================== -->
 
         <footer class="site-footer">
 
@@ -347,7 +387,9 @@
     </main>
 
 
-    <!-- IONICONS -->
+    <!-- ==================================================
+         IONICONS
+         ================================================== -->
 
     <script
         type="module"

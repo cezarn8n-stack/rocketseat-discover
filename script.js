@@ -1,12 +1,41 @@
 /* =========================================================
    CATARINA GUERRA — LINKS OFICIAIS
-   TEMA + OTIMIZAÇÕES MOBILE
+
+   O JAVASCRIPT NÃO ALTERA:
+   - foto
+   - tamanho
+   - coração
+   - ícones
+   - estrutura
+   - posição
+
+   Ele altera SOMENTE o tema.
    ========================================================= */
 
-const html = document.documentElement
-const themeSwitch = document.querySelector("#theme-switch")
 
-const STORAGE_KEY = "catarina-theme"
+const html =
+    document.documentElement
+
+const themeSwitch =
+    document.querySelector("#theme-switch")
+
+const themeColor =
+    document.querySelector(
+        'meta[name="theme-color"]'
+    )
+
+const STORAGE_KEY =
+    "catarina-theme"
+
+
+/* =========================================================
+   CORES DA BARRA DO NAVEGADOR
+   ========================================================= */
+
+const THEME_COLORS = {
+    light: "#ef4a9a",
+    dark: "#03132d"
+}
 
 
 /* =========================================================
@@ -14,18 +43,58 @@ const STORAGE_KEY = "catarina-theme"
    ========================================================= */
 
 function applyTheme(theme) {
-    const isLight = theme === "light"
 
-    html.classList.toggle("light", isLight)
+    const isLight =
+        theme === "light"
 
-    html.style.colorScheme = isLight
-        ? "light"
-        : "dark"
+
+    /*
+       ÚNICA CLASSE DE TEMA
+    */
+
+    html.classList.toggle(
+        "light",
+        isLight
+    )
+
+
+    /*
+       ELEMENTOS NATIVOS
+    */
+
+    html.style.colorScheme =
+        isLight
+            ? "light"
+            : "dark"
+
+
+    /*
+       ACESSIBILIDADE
+    */
 
     themeSwitch.setAttribute(
         "aria-pressed",
         String(!isLight)
     )
+
+
+    /*
+       COR DO NAVEGADOR MOBILE
+    */
+
+    if (themeColor) {
+
+        themeColor.setAttribute(
+            "content",
+            THEME_COLORS[theme]
+        )
+
+    }
+
+
+    /*
+       SALVA PREFERÊNCIA
+    */
 
     localStorage.setItem(
         STORAGE_KEY,
@@ -35,77 +104,105 @@ function applyTheme(theme) {
 
 
 /* =========================================================
-   ALTERNA O TEMA
+   ALTERNAR TEMA
    ========================================================= */
 
 function toggleTheme() {
-    const isCurrentlyLight =
+
+    const currentlyLight =
         html.classList.contains("light")
 
+
     const nextTheme =
-        isCurrentlyLight
+        currentlyLight
             ? "dark"
             : "light"
+
 
     applyTheme(nextTheme)
 }
 
 
 /* =========================================================
-   CARREGA O TEMA SALVO
+   CARREGAR TEMA SALVO
    ========================================================= */
 
 function loadSavedTheme() {
+
     const savedTheme =
-        localStorage.getItem(STORAGE_KEY)
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+
 
     if (
         savedTheme === "light" ||
         savedTheme === "dark"
     ) {
+
         applyTheme(savedTheme)
+
         return
     }
+
+
+    /*
+       PRIMEIRO ACESSO:
+       MODO CLARO / ROSA
+    */
 
     applyTheme("light")
 }
 
 
 /* =========================================================
-   LINKS — OTIMIZAÇÃO MOBILE
+   LINKS EXTERNOS
    ========================================================= */
 
 const mobileViewport =
-    window.matchMedia("(max-width: 699px)")
+    window.matchMedia(
+        "(max-width: 699px)"
+    )
 
 
 function configureExternalLinks() {
+
     const links =
         document.querySelectorAll(
             ".link-card, .social-link"
         )
 
+
     links.forEach((link) => {
 
         /*
-           No celular:
-           navegação no mesmo contexto.
+           MOBILE:
+           abre no mesmo contexto.
+
+           Isso reduz a demora para entregar
+           Instagram/Threads ao aplicativo.
         */
 
         if (mobileViewport.matches) {
-            link.removeAttribute("target")
+
+            link.removeAttribute(
+                "target"
+            )
+
             return
         }
 
+
         /*
-           No computador:
-           continua abrindo em nova aba.
+           DESKTOP:
+           abre em nova aba.
         */
 
         link.setAttribute(
             "target",
             "_blank"
         )
+
     })
 }
 
@@ -121,12 +218,15 @@ themeSwitch.addEventListener(
 
 
 if (
-    typeof mobileViewport.addEventListener === "function"
+    typeof mobileViewport.addEventListener
+    === "function"
 ) {
+
     mobileViewport.addEventListener(
         "change",
         configureExternalLinks
     )
+
 }
 
 

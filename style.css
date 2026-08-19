@@ -1,9 +1,6 @@
 /* =========================================================
    CATARINA GUERRA — LINKS OFICIAIS
-   Redesign 2026
-
-   MESMO LAYOUT NOS DOIS TEMAS.
-   Apenas cores, contraste e atmosfera são alterados.
+   LIGHT PINK + DARK MODE
    ========================================================= */
 
 
@@ -26,13 +23,21 @@ body {
     min-height: 100vh;
     min-height: 100svh;
 
-    font-family: "Inter", sans-serif;
-
     overflow-x: hidden;
 
-    transition:
-        background-color 0.35s ease,
-        color 0.35s ease;
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text-primary);
+
+    background:
+        var(--page-gradient),
+        var(--page-bg);
 }
 
 button,
@@ -50,235 +55,337 @@ a {
 
 
 /* =========================================================
-   PALETA — MODO ESCURO
+   DARK MODE — PADRÃO
    ========================================================= */
 
 :root {
 
+    /* MARCA */
+
+    --campaign-pink: #ef2f8b;
+    --campaign-pink-bright: #ff3b98;
+
+    --campaign-blue: #148bd4;
+    --campaign-yellow: #ffd326;
+
+
     /* FUNDO */
 
-    --page-bg: #04152f;
+    --page-bg: #03132d;
 
     --page-gradient:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(22, 76, 141, 0.34) 0%,
-            rgba(7, 31, 70, 0.16) 31%,
-            transparent 58%
+            circle at 18% 3%,
+            rgba(25, 90, 165, 0.22) 0%,
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 92% 35%,
+            rgba(239, 47, 139, 0.09) 0%,
+            transparent 31%
         ),
         linear-gradient(
             180deg,
-            #061a3a 0%,
-            #03142f 46%,
-            #021127 100%
+            #071b3d 0%,
+            #03142f 52%,
+            #020e23 100%
         );
 
 
     /* TEXTO */
 
     --text-primary: #f8fbff;
-    --text-secondary: rgba(235, 243, 255, 0.72);
+    --text-secondary: #aab9d0;
 
 
     /* CARDS */
 
     --card-bg:
         linear-gradient(
-            135deg,
-            rgba(17, 43, 82, 0.94),
-            rgba(5, 27, 61, 0.96)
+            145deg,
+            #0d2950 0%,
+            #071e40 52%,
+            #051a38 100%
         );
 
-    --card-border: rgba(157, 184, 220, 0.28);
+    --card-border:
+        rgba(142, 174, 220, 0.19);
 
     --card-shadow:
-        0 18px 44px rgba(0, 5, 20, 0.22);
-
-    --card-hover-bg:
-        linear-gradient(
-            135deg,
-            rgba(24, 56, 101, 0.98),
-            rgba(8, 35, 74, 0.98)
-        );
+        inset 0 1px 0
+            rgba(255, 255, 255, 0.035),
+        0 12px 30px
+            rgba(0, 3, 18, 0.24);
 
 
     /* ÍCONES */
 
-    --icon-bg: rgba(238, 43, 139, 0.09);
-    --icon-color: #f02d8b;
+    --icon-bg:
+        rgba(239, 47, 139, 0.10);
 
-    --arrow-color: #f02d8b;
+    --icon-color: #ff429d;
+
+    --arrow-color: #ff429d;
+
+
+    /* CTA */
+
+    --cta-bg:
+        linear-gradient(
+            145deg,
+            #102e57 0%,
+            #071e40 100%
+        );
+
+    --cta-border:
+        rgba(42, 151, 229, 0.43);
+
+    --cta-icon-bg:
+        rgba(28, 137, 220, 0.12);
+
+    --cta-icon-color: #49adf1;
+
+    --cta-shadow:
+        inset 0 1px 0
+            rgba(255, 255, 255, 0.04),
+        0 13px 32px
+            rgba(0, 5, 21, 0.24);
 
 
     /* SWITCH */
 
-    --switch-bg: rgba(7, 30, 65, 0.92);
-    --switch-border: rgba(167, 194, 231, 0.25);
+    --switch-bg: #071e40;
+
+    --switch-border:
+        rgba(141, 174, 216, 0.21);
 
     --switch-indicator-bg:
         linear-gradient(
             145deg,
-            rgba(16, 52, 96, 0.98),
-            rgba(8, 34, 72, 0.98)
+            #102d56,
+            #092243
         );
 
     --switch-indicator-shadow:
-        0 7px 18px rgba(0, 4, 18, 0.22);
+        0 6px 16px
+        rgba(0, 4, 20, 0.25);
 
-    --sun-color: rgba(214, 225, 241, 0.58);
-    --moon-color: #f4f7fc;
+    --sun-color: #ff3e98;
+    --moon-color: #f6f9ff;
 
 
     /* SOCIAL */
 
-    --social-bg: rgba(12, 39, 77, 0.88);
-    --social-border: rgba(169, 196, 232, 0.22);
+    --social-bg: #092345;
+
+    --social-border:
+        rgba(148, 178, 220, 0.20);
+
     --social-icon: #ffffff;
 
     --social-shadow:
-        0 12px 32px rgba(0, 5, 20, 0.2);
+        0 9px 24px
+        rgba(0, 4, 20, 0.20);
 
 
-    /* PERFIL */
+    /* FOTO */
 
-    --profile-ring: rgba(255, 255, 255, 0.92);
+    --profile-ring:
+        rgba(255, 255, 255, 0.96);
 
     --profile-shadow:
-        0 22px 55px rgba(0, 7, 24, 0.26);
+        0 18px 45px
+        rgba(0, 5, 22, 0.26);
 
 
-    /* CORAÇÃO */
+    /* CORAÇÃO GRANDE */
 
-    --heart-opacity: 0.64;
-    --heart-blur: 15px;
-    --heart-saturation: 1.05;
+    --heart-opacity: 0.84;
+
+    --heart-shadow:
+        drop-shadow(
+            0 10px 24px
+            rgba(0, 4, 20, 0.24)
+        );
 
 
-    /* RODAPÉ */
+    /* FOOTER */
 
-    --footer-color: rgba(224, 234, 248, 0.48);
-    --footer-link: rgba(239, 245, 255, 0.68);
+    --footer-text:
+        rgba(229, 237, 248, 0.55);
+
+    --footer-link:
+        rgba(244, 248, 255, 0.78);
+
+    --footer-heart: #ff3b98;
 }
 
 
 /* =========================================================
-   PALETA — MODO CLARO
+   LIGHT MODE — ROSA CATARINA
    ========================================================= */
 
 html.light {
 
     /* FUNDO */
 
-    --page-bg: #f3f8fc;
+    --page-bg: #ed4b98;
 
     --page-gradient:
         radial-gradient(
-            circle at 11% 8%,
-            rgba(76, 166, 219, 0.11) 0%,
-            transparent 30%
+            circle at 18% 0%,
+            rgba(255, 222, 237, 0.36) 0%,
+            transparent 31%
         ),
         radial-gradient(
-            circle at 88% 24%,
-            rgba(238, 43, 139, 0.08) 0%,
-            transparent 28%
+            circle at 91% 28%,
+            rgba(255, 193, 220, 0.22) 0%,
+            transparent 30%
         ),
         linear-gradient(
             180deg,
-            #f6fbff 0%,
-            #f9fbfd 50%,
-            #eef6fb 100%
+            #f277ae 0%,
+            #ee579f 43%,
+            #e83b8e 100%
         );
 
 
     /* TEXTO */
 
-    --text-primary: #071a3a;
-    --text-secondary: rgba(7, 26, 58, 0.64);
+    --text-primary: #082348;
+    --text-secondary: #607089;
 
 
     /* CARDS */
 
     --card-bg:
         linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.96),
-            rgba(249, 252, 254, 0.92)
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(255, 247, 252, 0.97)
         );
 
-    --card-border: rgba(28, 79, 128, 0.11);
+    --card-border:
+        rgba(255, 255, 255, 0.70);
 
     --card-shadow:
-        0 16px 38px rgba(22, 58, 94, 0.09);
-
-    --card-hover-bg:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #f5faff
-        );
+        inset 0 1px 0
+            rgba(255, 255, 255, 1),
+        0 11px 28px
+            rgba(101, 19, 62, 0.14);
 
 
     /* ÍCONES */
 
-    --icon-bg: rgba(238, 43, 139, 0.065);
-    --icon-color: #e92b88;
+    --icon-bg: #fff0f7;
+    --icon-color: #ec2f8a;
 
-    --arrow-color: #ec2f8d;
+    --arrow-color: #ed2e8a;
+
+
+    /* CTA */
+
+    --cta-bg:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fff8fc 100%
+        );
+
+    --cta-border:
+        rgba(39, 135, 223, 0.48);
+
+    --cta-icon-bg: #e8f4ff;
+    --cta-icon-color: #1983db;
+
+    --cta-shadow:
+        inset 0 1px 0
+            rgba(255, 255, 255, 1),
+        0 12px 28px
+            rgba(93, 22, 59, 0.14);
 
 
     /* SWITCH */
 
-    --switch-bg: rgba(255, 255, 255, 0.72);
+    --switch-bg:
+        rgba(255, 255, 255, 0.95);
 
     --switch-border:
-        rgba(45, 91, 131, 0.12);
+        rgba(255, 255, 255, 0.76);
 
     --switch-indicator-bg:
         linear-gradient(
             145deg,
             #ffffff,
-            #f9fbfd
+            #fff8fc
         );
 
     --switch-indicator-shadow:
-        0 7px 18px rgba(28, 66, 100, 0.12);
+        0 6px 16px
+        rgba(104, 28, 66, 0.12);
 
-    --sun-color: #ef2d8b;
-    --moon-color: rgba(22, 37, 61, 0.62);
+    --sun-color: #ee2f8c;
+    --moon-color: #53647b;
 
 
     /* SOCIAL */
 
-    --social-bg: rgba(255, 255, 255, 0.88);
+    --social-bg: #ffffff;
 
     --social-border:
-        rgba(25, 68, 109, 0.1);
+        rgba(255, 255, 255, 0.76);
 
-    --social-icon: #071a3a;
+    --social-icon: #082348;
 
     --social-shadow:
-        0 11px 27px rgba(27, 61, 93, 0.1);
+        0 9px 23px
+        rgba(101, 22, 62, 0.14);
 
 
-    /* PERFIL */
+    /* FOTO */
 
-    --profile-ring: rgba(255, 255, 255, 0.96);
+    --profile-ring:
+        rgba(255, 255, 255, 0.97);
 
     --profile-shadow:
-        0 18px 48px rgba(25, 62, 96, 0.12);
+        0 18px 44px
+        rgba(105, 24, 64, 0.16);
 
 
-    /* CORAÇÃO */
+    /* =====================================================
+       CORAÇÃO GRANDE NO ROSA
 
-    --heart-opacity: 0.43;
-    --heart-blur: 17px;
-    --heart-saturation: 0.94;
+       Mais visível sem disputar atenção
+       com os botões.
+       ===================================================== */
+
+    --heart-opacity: 0.94;
+
+    --heart-shadow:
+        drop-shadow(
+            0 0 2px
+            rgba(255, 255, 255, 0.90)
+        )
+        drop-shadow(
+            0 10px 22px
+            rgba(112, 18, 67, 0.20)
+        );
 
 
-    /* RODAPÉ */
+    /* FOOTER */
 
-    --footer-color: rgba(7, 26, 58, 0.42);
-    --footer-link: rgba(7, 26, 58, 0.64);
+    --footer-text:
+        rgba(45, 31, 48, 0.58);
+
+    --footer-link:
+        rgba(27, 28, 48, 0.78);
+
+    /*
+       No fundo rosa, o coração pequeno
+       passa a ser branco.
+    */
+
+    --footer-heart: #ffffff;
 }
 
 
@@ -289,113 +396,123 @@ html.light {
 body {
     position: relative;
 
-    color: var(--text-primary);
-
-    background-color: var(--page-bg);
-    background-image: var(--page-gradient);
-
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+
+    background-attachment: fixed;
 }
 
 
 /* =========================================================
-   EFEITOS DE FUNDO
+   FUNDO DECORATIVO FIXO
    ========================================================= */
 
 .background-effects {
     position: fixed;
+
     inset: 0;
 
-    z-index: -2;
+    z-index: 0;
+
+    width: 100%;
+    height: 100lvh;
 
     overflow: hidden;
+
+    pointer-events: none;
+
+    contain: layout paint;
+}
+
+
+/* =========================================================
+   GLOWS
+   ========================================================= */
+
+.background-glow {
+    position: absolute;
+
+    border-radius: 50%;
 
     pointer-events: none;
 }
 
 
-/* AZUL SUAVE SUPERIOR */
+.background-glow--one {
+    width: 330px;
+    height: 330px;
 
-.background-effects__blue {
-    position: absolute;
-
-    top: -140px;
-    left: 50%;
-
-    width: 520px;
-    height: 420px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
+    top: -160px;
+    left: -150px;
 
     background:
         radial-gradient(
             circle,
-            rgba(54, 145, 208, 0.13) 0%,
-            transparent 70%
+            rgba(67, 163, 222, 0.13),
+            transparent 67%
         );
-
-    filter: blur(45px);
 }
 
 
-/* ROSA MUITO DISCRETO */
+.background-glow--two {
+    width: 360px;
+    height: 360px;
 
-.background-effects__pink {
-    position: absolute;
-
-    top: 22%;
-    right: -180px;
-
-    width: 400px;
-    height: 400px;
-
-    border-radius: 50%;
+    top: 18%;
+    right: -190px;
 
     background:
         radial-gradient(
             circle,
-            rgba(237, 46, 139, 0.11) 0%,
-            transparent 70%
+            rgba(255, 82, 160, 0.12),
+            transparent 68%
         );
-
-    filter: blur(65px);
 }
 
 
 /* =========================================================
    CORAÇÃO DA CAMPANHA
+
+   A arte nítida envolve a área dos links. O contorno azul
+   mantém o coração legível sobre o rosa sem competir com
+   os textos e botões.
    ========================================================= */
 
 .campaign-heart {
     position: absolute;
 
-    z-index: -1;
+    left: 50%;
+    right: auto;
+    top: clamp(390px, 48svh, 435px);
+    bottom: auto;
 
-    width: min(580px, 125vw);
+    width: clamp(560px, 154vw, 650px);
+    max-width: none;
+
     height: auto;
 
-    right: -180px;
-    bottom: -120px;
 
     opacity: var(--heart-opacity);
 
-    filter:
-        blur(var(--heart-blur))
-        saturate(var(--heart-saturation));
-
     transform:
-        rotate(-8deg)
-        scale(1.12);
+        translate3d(-50%, 0, 0)
+        rotate(-4deg);
+
 
     transform-origin: center;
 
+    filter: var(--heart-shadow);
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    backface-visibility: hidden;
+
     transition:
-        opacity 0.4s ease,
-        filter 0.4s ease;
+        opacity 0.18s ease;
 }
 
 
@@ -405,16 +522,23 @@ body {
 
 #container {
     position: relative;
-    z-index: 1;
 
-    width: min(100% - 32px, 470px);
+    z-index: 2;
+
+    width: min(
+        100% - 28px,
+        470px
+    );
 
     margin: 0 auto;
 
     padding:
-        40px
+        34px
         0
-        calc(30px + env(safe-area-inset-bottom));
+        calc(
+            26px
+            + env(safe-area-inset-bottom)
+        );
 }
 
 
@@ -424,39 +548,40 @@ body {
 
 #profile {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     text-align: center;
 }
 
 
-/* CONTAINER DA FOTO */
-
 .profile-image-wrapper {
-    position: relative;
-
     display: grid;
+
     place-items: center;
 
-    width: clamp(205px, 59vw, 252px);
-    aspect-ratio: 1 / 1;
+    width:
+        clamp(
+            205px,
+            58vw,
+            245px
+        );
 
-    border-radius: 50%;
+    aspect-ratio: 1;
 
     padding: 6px;
 
-    background: var(--profile-ring);
+    border-radius: 50%;
 
-    box-shadow: var(--profile-shadow);
+    background:
+        var(--profile-ring);
 
-    transition:
-        box-shadow 0.35s ease,
-        background-color 0.35s ease;
+    box-shadow:
+        var(--profile-shadow);
 }
 
-
-/* IMAGEM 5X5 */
 
 .profile-image {
     display: block;
@@ -469,26 +594,29 @@ body {
     object-fit: cover;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
 
 
-/* USERNAME */
-
 .profile-username {
-    margin-top: 27px;
+    margin-top: 24px;
 
-    color: var(--text-primary);
+    color:
+        var(--text-primary);
 
-    font-size: clamp(1.55rem, 7vw, 2rem);
+    font-size:
+        clamp(
+            1.52rem,
+            7vw,
+            1.95rem
+        );
 
-    font-weight: 700;
+    font-weight: 800;
 
-    line-height: 1.1;
+    line-height: 1.08;
 
-    letter-spacing: -0.045em;
-
-    transition: color 0.35s ease;
+    letter-spacing: -0.052em;
 }
 
 
@@ -498,10 +626,12 @@ body {
 
 .theme-switch-wrapper {
     display: flex;
+
     justify-content: center;
 
-    margin-top: 27px;
-    margin-bottom: 35px;
+    margin-top: 25px;
+
+    margin-bottom: 34px;
 }
 
 
@@ -509,7 +639,11 @@ body {
     position: relative;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     align-items: center;
 
     width: 116px;
@@ -517,29 +651,27 @@ body {
 
     padding: 4px;
 
-    cursor: pointer;
-
-    color: var(--text-primary);
-
     border:
         1px solid
         var(--switch-border);
 
     border-radius: 999px;
 
-    background: var(--switch-bg);
+    background:
+        var(--switch-bg);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        0 7px 18px
+        rgba(17, 30, 54, 0.08);
 
-    transition:
-        background-color 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
-
-/* BOLHA DO SWITCH */
 
 .theme-switch__indicator {
     position: absolute;
@@ -554,31 +686,33 @@ body {
 
     border-radius: 999px;
 
-    background: var(--switch-indicator-bg);
+    background:
+        var(--switch-indicator-bg);
 
     box-shadow:
         var(--switch-indicator-shadow);
 
-    transform: translateX(54px);
+    transform:
+        translateX(54px);
 
     transition:
-        transform 0.32s
-        cubic-bezier(0.22, 1, 0.36, 1),
-
-        background 0.35s ease,
-
-        box-shadow 0.35s ease;
+        transform
+        0.18s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
 }
 
 
-/* CLARO = BOLHA À ESQUERDA */
-
-html.light .theme-switch__indicator {
-    transform: translateX(0);
+html.light
+.theme-switch__indicator {
+    transform:
+        translateX(0);
 }
 
-
-/* ÍCONES */
 
 .theme-switch__option {
     position: relative;
@@ -586,55 +720,36 @@ html.light .theme-switch__indicator {
     z-index: 2;
 
     display: grid;
+
     place-items: center;
 
     width: 100%;
     height: 100%;
 
     font-size: 23px;
-
-    transition:
-        color 0.3s ease,
-        opacity 0.3s ease;
 }
 
 
 .theme-switch__option--light {
-    color: var(--sun-color);
+    color:
+        var(--sun-color);
 }
 
 
 .theme-switch__option--dark {
-    color: var(--moon-color);
+    color:
+        var(--moon-color);
 }
 
 
 /* =========================================================
-   LINKS
+   CTA
    ========================================================= */
 
-.links-section {
-    position: relative;
-    z-index: 2;
+.featured-section {
+    margin-bottom: 13px;
 }
 
-
-.links-list {
-    display: flex;
-    flex-direction: column;
-
-    gap: 13px;
-
-    list-style: none;
-}
-
-
-.link-item {
-    width: 100%;
-}
-
-
-/* CARD */
 
 .link-card {
     position: relative;
@@ -644,21 +759,24 @@ html.light .theme-switch__indicator {
     grid-template-columns:
         52px
         minmax(0, 1fr)
-        32px;
+        30px;
 
     align-items: center;
+
+    width: 100%;
 
     min-height: 78px;
 
     padding:
         11px
-        18px
+        17px
         11px
         14px;
 
     overflow: hidden;
 
-    color: var(--text-primary);
+    color:
+        var(--text-primary);
 
     text-decoration: none;
 
@@ -668,33 +786,52 @@ html.light .theme-switch__indicator {
 
     border-radius: 24px;
 
-    background: var(--card-bg);
+    background:
+        var(--card-bg);
 
-    box-shadow: var(--card-shadow);
+    box-shadow:
+        var(--card-shadow);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    touch-action: manipulation;
 
-    transition:
-        transform 0.22s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    -webkit-tap-highlight-color:
+        rgba(
+            239,
+            47,
+            139,
+            0.10
+        );
 }
 
 
-/* PEQUENO ACENTO LATERAL */
+.frame-cta {
+    min-height: 91px;
 
-.link-card::before {
-    content: "";
+    background:
+        var(--cta-bg);
 
+    border-color:
+        var(--cta-border);
+
+    box-shadow:
+        var(--cta-shadow);
+}
+
+
+/* =========================================================
+   ACENTOS LATERAIS
+   ========================================================= */
+
+.link-card__accent {
     position: absolute;
 
     left: 0;
-    top: 20%;
+
+    top: 21%;
 
     width: 3px;
-    height: 60%;
+
+    height: 58%;
 
     border-radius:
         0
@@ -702,90 +839,81 @@ html.light .theme-switch__indicator {
         999px
         0;
 
-    background: #eb2e8b;
-
-    opacity: 0.75;
+    background:
+        var(--campaign-pink);
 }
 
 
-/* TERCEIRO CARD */
-
-.link-item:nth-child(3)
-.link-card::before {
-    background: #32a8df;
+.frame-cta
+.link-card__accent {
+    background:
+        var(--campaign-blue);
 }
 
 
-/* QUARTO CARD */
-
-.link-item:nth-child(4)
-.link-card::before {
-    background: #ffc929;
+.link-item--blue
+.link-card__accent {
+    background:
+        #35a8e0;
 }
 
 
-/* HOVER */
-
-.link-card:hover {
-    transform: translateY(-2px);
-
-    background: var(--card-hover-bg);
-
-    box-shadow:
-        0 18px 42px
-        rgba(8, 34, 70, 0.14);
-}
-
-
-/* ACTIVE */
-
-.link-card:active {
-    transform:
-        translateY(0)
-        scale(0.988);
-}
-
-
-/* FOCO POR TECLADO */
-
-.link-card:focus-visible,
-.social-link:focus-visible,
-#theme-switch:focus-visible {
-    outline:
-        3px solid
-        rgba(238, 43, 139, 0.34);
-
-    outline-offset: 4px;
+.link-item--yellow
+.link-card__accent {
+    background:
+        var(--campaign-yellow);
 }
 
 
 /* =========================================================
-   ÍCONE DO CARD
+   ÍCONES
    ========================================================= */
 
 .link-card__icon {
     display: grid;
+
     place-items: center;
 
     width: 44px;
+
     height: 44px;
-
-    color: var(--icon-color);
-
-    font-size: 25px;
 
     border-radius: 50%;
 
-    background: var(--icon-bg);
+    color:
+        var(--icon-color);
 
-    transition:
-        color 0.3s ease,
-        background-color 0.3s ease;
+    background:
+        var(--icon-bg);
+
+    font-size: 24px;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            239,
+            47,
+            139,
+            0.035
+        );
+}
+
+
+.frame-cta__icon {
+    color:
+        var(--cta-icon-color);
+
+    background:
+        var(--cta-icon-bg);
 }
 
 
 /* =========================================================
-   LABEL DO CARD
+   LABEL DOS LINKS
    ========================================================= */
 
 .link-card__label {
@@ -793,54 +921,130 @@ html.light .theme-switch__indicator {
 
     padding:
         0
-        10px;
+        9px;
 
-    color: var(--text-primary);
+    color:
+        var(--text-primary);
 
-    font-size: clamp(
-        1rem,
-        4.4vw,
-        1.12rem
-    );
+    font-size:
+        clamp(
+            0.98rem,
+            4.2vw,
+            1.08rem
+        );
 
-    font-weight: 600;
+    font-weight: 650;
 
     line-height: 1.22;
 
     text-align: center;
 
-    letter-spacing: -0.02em;
-
-    transition: color 0.35s ease;
+    letter-spacing: -0.025em;
 }
 
 
 .link-card__label strong {
-    font-weight: 700;
+    font-weight: 800;
 }
 
 
 /* =========================================================
-   SETA
+   CTA — TEXTO
+   ========================================================= */
+
+.frame-cta__content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        0
+        9px;
+}
+
+
+.frame-cta__title {
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            0.96rem,
+            4vw,
+            1.07rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.24;
+
+    letter-spacing: -0.027em;
+
+    text-align: left;
+}
+
+
+.frame-cta__title strong {
+    color:
+        var(--campaign-pink-bright);
+
+    font-weight: 800;
+}
+
+
+.frame-cta__subtitle {
+    margin-top: 5px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        clamp(
+            0.70rem,
+            2.9vw,
+            0.78rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   SETAS
    ========================================================= */
 
 .link-card__arrow {
     display: grid;
+
     place-items: center;
 
-    color: var(--arrow-color);
+    color:
+        var(--arrow-color);
 
-    font-size: 25px;
-
-    transition:
-        transform 0.22s ease,
-        color 0.3s ease;
+    font-size: 24px;
 }
 
 
-.link-card:hover
-.link-card__arrow {
-    transform: translateX(3px);
+/* =========================================================
+   LISTA DE LINKS
+   ========================================================= */
+
+.links-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    list-style: none;
 }
 
 
@@ -850,26 +1054,32 @@ html.light .theme-switch__indicator {
 
 #social-links {
     position: relative;
-    z-index: 3;
+
+    z-index: 4;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     gap: 17px;
 
-    margin-top: 29px;
+    margin-top: 28px;
 }
 
 
 .social-link {
     display: grid;
+
     place-items: center;
 
     width: 56px;
+
     height: 56px;
 
-    color: var(--social-icon);
+    color:
+        var(--social-icon);
 
     font-size: 27px;
 
@@ -881,44 +1091,35 @@ html.light .theme-switch__indicator {
 
     border-radius: 50%;
 
-    background: var(--social-bg);
+    background:
+        var(--social-bg);
 
-    box-shadow: var(--social-shadow);
+    box-shadow:
+        var(--social-shadow);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    touch-action: manipulation;
 
-    transition:
-        transform 0.22s ease,
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease;
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 
-.social-link:hover {
-    transform:
-        translateY(-3px)
-        scale(1.035);
-}
-
-
-.social-link:active {
-    transform: scale(0.96);
+.social-link:first-child {
+    color:
+        var(--campaign-pink);
 }
 
 
 /* =========================================================
-   FOOTER
+   RODAPÉ
    ========================================================= */
 
 .site-footer {
     position: relative;
-    z-index: 3;
 
-    margin-top: 31px;
+    z-index: 4;
 
-    padding-bottom: 4px;
+    margin-top: 27px;
 
     text-align: center;
 }
@@ -926,230 +1127,424 @@ html.light .theme-switch__indicator {
 
 .site-footer p {
     display: inline-flex;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     flex-wrap: wrap;
 
-    gap: 4px;
+    gap: 5px;
 
-    color: var(--footer-color);
+    color:
+        var(--footer-text);
 
-    font-size: 0.72rem;
-    font-weight: 400;
-
-    line-height: 1.5;
-
-    transition: color 0.35s ease;
-}
-
-
-.site-footer ion-icon {
-    color: #eb2e8b;
-
-    font-size: 12px;
-}
-
-
-.site-footer a {
-    color: var(--footer-link);
+    font-size: 0.70rem;
 
     font-weight: 500;
 
-    text-underline-offset: 3px;
-
-    transition: color 0.25s ease;
+    line-height: 1.5;
 }
 
 
-.site-footer a:hover {
-    color: var(--text-primary);
+/*
+   CORAÇÃO DO "FEITO COM"
+   AGORA VISÍVEL NOS DOIS TEMAS.
+*/
+
+.site-footer ion-icon {
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    color:
+        var(--footer-heart);
+
+    font-size: 14px;
+
+    opacity: 1;
+
+    filter:
+        drop-shadow(
+            0
+            1px
+            2px
+            rgba(
+                0,
+                0,
+                0,
+                0.12
+            )
+        );
+}
+
+
+.site-footer a {
+    color:
+        var(--footer-link);
+
+    font-weight: 600;
+
+    text-underline-offset: 3px;
 }
 
 
 /* =========================================================
-   TRANSIÇÃO DE TEMA
+   HOVER — DESKTOP
    ========================================================= */
 
-.profile-image-wrapper,
-.profile-username,
-.link-card,
-.link-card__label,
-.link-card__icon,
-.link-card__arrow,
-.social-link,
-.site-footer p,
-.site-footer a {
-    transition-duration: 0.32s;
+@media (hover: hover) {
+
+    .link-card {
+        transition:
+            transform
+            0.18s
+            ease,
+            box-shadow
+            0.18s
+            ease;
+    }
+
+
+    .link-card:hover {
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 17px 35px
+            rgba(
+                0,
+                9,
+                30,
+                0.17
+            );
+    }
+
+
+    .link-card__arrow {
+        transition:
+            transform
+            0.18s
+            ease;
+    }
+
+
+    .link-card:hover
+    .link-card__arrow {
+        transform:
+            translateX(3px);
+    }
+
+
+    .social-link {
+        transition:
+            transform
+            0.18s
+            ease,
+            box-shadow
+            0.18s
+            ease;
+    }
+
+
+    .social-link:hover {
+        transform:
+            translateY(-2px)
+            scale(1.03);
+    }
 }
 
 
 /* =========================================================
-   CELULARES MENORES
+   ACTIVE
+   ========================================================= */
+
+.link-card:active {
+    opacity: 0.90;
+}
+
+
+.social-link:active {
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.link-card:focus-visible,
+.social-link:focus-visible,
+#theme-switch:focus-visible {
+    outline:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
    ========================================================= */
 
 @media (max-width: 390px) {
 
     #container {
-        width: min(
-            100% - 24px,
-            470px
-        );
+        width:
+            min(
+                100% - 22px,
+                470px
+            );
 
-        padding-top: 29px;
+        padding-top:
+            27px;
     }
 
 
     .profile-image-wrapper {
         width:
             clamp(
-                190px,
+                185px,
                 57vw,
-                220px
+                218px
             );
     }
 
 
     .profile-username {
-        margin-top: 23px;
+        margin-top:
+            21px;
 
-        font-size: 1.48rem;
+        font-size:
+            1.45rem;
     }
 
 
     .theme-switch-wrapper {
-        margin-top: 24px;
-        margin-bottom: 30px;
+        margin-top:
+            22px;
+
+        margin-bottom:
+            29px;
+    }
+
+
+    .frame-cta {
+        min-height:
+            87px;
     }
 
 
     .link-card {
-        min-height: 72px;
+        min-height:
+            72px;
 
         grid-template-columns:
             48px
             minmax(0, 1fr)
-            28px;
+            27px;
 
         padding:
             10px
-            14px
+            13px
             10px
-            12px;
+            11px;
 
-        border-radius: 21px;
+        border-radius:
+            21px;
     }
 
 
     .link-card__icon {
-        width: 41px;
-        height: 41px;
+        width:
+            41px;
 
-        font-size: 23px;
+        height:
+            41px;
+
+        font-size:
+            22px;
     }
 
 
     .link-card__label {
-        font-size: 0.96rem;
+        font-size:
+            0.94rem;
+    }
+
+
+    .frame-cta__title {
+        font-size:
+            0.91rem;
+    }
+
+
+    .frame-cta__subtitle {
+        font-size:
+            0.68rem;
     }
 
 
     .link-card__arrow {
-        font-size: 22px;
+        font-size:
+            21px;
     }
 
 
     .campaign-heart {
-        width: 145vw;
+        top: 385px;
 
-        right: -62vw;
-        bottom: -110px;
-    }
-
-    .frame-cta {
-        min-height: 82px;
-    }
-
-    .frame-cta__content {
-        padding-left: 8px;
-        padding-right: 6px;
-    }
-
-    .frame-cta__title {
-        font-size: 0.94rem;
-    }
-
-    .frame-cta__subtitle {
-        font-size: 0.7rem;
+        width:
+            clamp(
+                525px,
+                158vw,
+                610px
+            );
     }
 }
 
 
 /* =========================================================
-   TABLETS / TELAS GRANDES
+   DESKTOP / TABLET
    ========================================================= */
 
 @media (min-width: 700px) {
 
     #container {
-        width: min(
-            100% - 48px,
-            480px
-        );
+        width:
+            min(
+                100% - 48px,
+                480px
+            );
 
-        padding-top: 48px;
+        padding-top:
+            44px;
     }
 
 
     .profile-image-wrapper {
-        width: 245px;
+        width:
+            240px;
     }
 
 
     .campaign-heart {
-        width: 620px;
+        top: 420px;
 
-        right:
-            calc(
-                50% - 410px
+        width:
+            min(
+                680px,
+                76vw
             );
-
-        bottom: -150px;
     }
 }
 
 
 /* =========================================================
-   HOVER APENAS EM DISPOSITIVOS COM MOUSE
+   MOBILE PERFORMANCE
    ========================================================= */
 
-@media (hover: none) {
+@media (max-width: 699px) {
 
-    .link-card:hover {
-        transform: none;
+    /*
+       Nada de backdrop-filter pesado.
+    */
 
-        background: var(--card-bg);
+    #theme-switch,
+    .link-card,
+    .social-link {
+        backdrop-filter: none;
 
-        box-shadow: var(--card-shadow);
+        -webkit-backdrop-filter:
+            none;
     }
 
 
-    .social-link:hover {
-        transform: none;
+    /*
+       Mantemos altura estável da viewport.
+    */
+
+    .background-effects {
+        height:
+            100lvh;
+
+        min-height:
+            100lvh;
+    }
+
+
+    /*
+       O coração continua estático.
+    */
+
+    .campaign-heart {
+        transition:
+            opacity
+            0.12s
+            ease;
+    }
+
+
+    /*
+       Sem animações caras.
+    */
+
+    .link-card,
+    .social-link,
+    .profile-image-wrapper,
+    .profile-username,
+    .site-footer,
+    .site-footer p,
+    .site-footer a {
+        transition:
+            none !important;
+    }
+
+
+    /*
+       Apenas a bolinha do switch anima.
+    */
+
+    .theme-switch__indicator {
+        transition:
+            transform
+            0.16s
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+    }
+
+
+    body {
+        background-attachment:
+            scroll;
     }
 }
 
 
 /* =========================================================
-   ACESSIBILIDADE — MENOS MOVIMENTO
+   ACESSIBILIDADE
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
+        scroll-behavior:
+            auto !important;
 
         transition-duration:
             0.01ms !important;
@@ -1159,510 +1554,5 @@ html.light .theme-switch__indicator {
 
         animation-iteration-count:
             1 !important;
-    }
-}
-
-
-/* =========================================================
-   CTA — MOLDURA 44188
-   ========================================================= */
-
-.frame-cta-wrapper {
-    position: relative;
-    z-index: 3;
-
-    margin-bottom: 13px;
-}
-
-
-/* CARD PRINCIPAL */
-
-.frame-cta {
-    min-height: 88px;
-
-    border-color: rgba(38, 125, 214, 0.48);
-
-    box-shadow:
-        0 14px 32px rgba(20, 78, 132, 0.11);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.98),
-            rgba(247, 251, 255, 0.96)
-        );
-}
-
-
-/* ACENTO LATERAL AZUL */
-
-.frame-cta::before {
-    background: #2787df;
-
-    opacity: 0.9;
-}
-
-
-/* ÍCONE */
-
-.frame-cta__icon {
-    color: #1673cf;
-
-    background:
-        rgba(39, 135, 223, 0.09);
-
-    box-shadow:
-        inset 0 0 0 1px
-        rgba(39, 135, 223, 0.06);
-}
-
-
-/* ÁREA DE TEXTO */
-
-.frame-cta__content {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    min-width: 0;
-
-    padding:
-        0
-        10px;
-}
-
-
-/* TÍTULO */
-
-.frame-cta__title {
-    color: var(--text-primary);
-
-    font-size:
-        clamp(
-            0.98rem,
-            4.1vw,
-            1.08rem
-        );
-
-    font-weight: 650;
-
-    line-height: 1.22;
-
-    letter-spacing: -0.025em;
-
-    text-align: left;
-}
-
-
-/* 44188 */
-
-.frame-cta__title strong {
-    color: #eb2e8b;
-
-    font-weight: 750;
-}
-
-
-/* SUBTÍTULO */
-
-.frame-cta__subtitle {
-    display: block;
-
-    margin-top: 5px;
-
-    color: var(--text-secondary);
-
-    font-size:
-        clamp(
-            0.72rem,
-            3vw,
-            0.79rem
-        );
-
-    font-weight: 500;
-
-    line-height: 1.3;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   CTA — MODO ESCURO
-   ========================================================= */
-
-html:not(.light) .frame-cta {
-    border-color:
-        rgba(55, 153, 230, 0.42);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(15, 45, 84, 0.98),
-            rgba(6, 29, 63, 0.98)
-        );
-
-    box-shadow:
-        0 14px 30px
-        rgba(0, 5, 20, 0.18);
-}
-
-
-html:not(.light)
-.frame-cta__icon {
-    color: #5db7f1;
-
-    background:
-        rgba(52, 156, 226, 0.11);
-}
-
-
-html:not(.light)
-.frame-cta__title strong {
-    color: #ff3c9a;
-}
-
-
-/* =========================================================
-   OTIMIZAÇÃO DE PERFORMANCE — MOBILE V3
-   Design refinado + alta performance
-   ========================================================= */
-
-@media (max-width: 699px) {
-
-    /* =====================================================
-       FUNDO — ESCURO
-       ===================================================== */
-
-    :root {
-        --page-gradient:
-            radial-gradient(
-                circle at 10% 2%,
-                rgba(49, 126, 196, 0.18) 0%,
-                transparent 32%
-            ),
-            radial-gradient(
-                circle at 94% 28%,
-                rgba(238, 43, 139, 0.08) 0%,
-                transparent 34%
-            ),
-            linear-gradient(
-                180deg,
-                #071c3d 0%,
-                #04152f 52%,
-                #021127 100%
-            );
-
-        --heart-opacity: 0.56;
-
-        --card-bg:
-            linear-gradient(
-                145deg,
-                rgba(13, 39, 76, 0.98),
-                rgba(5, 27, 60, 0.98)
-            );
-
-        --card-border:
-            rgba(151, 180, 217, 0.22);
-
-        --card-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.035),
-            0 9px 22px rgba(0, 4, 18, 0.16);
-
-        --switch-bg:
-            rgba(8, 30, 64, 0.97);
-
-        --social-bg:
-            rgba(10, 36, 73, 0.97);
-    }
-
-
-    /* =====================================================
-       FUNDO — CLARO
-       ===================================================== */
-
-    html.light {
-        --page-gradient:
-            radial-gradient(
-                circle at 8% 4%,
-                rgba(54, 154, 214, 0.15) 0%,
-                transparent 31%
-            ),
-            radial-gradient(
-                circle at 92% 27%,
-                rgba(238, 43, 139, 0.085) 0%,
-                transparent 33%
-            ),
-            linear-gradient(
-                180deg,
-                #f7fbff 0%,
-                #f8fbfd 48%,
-                #edf6fb 100%
-            );
-
-        --heart-opacity: 0.40;
-
-        --card-bg:
-            linear-gradient(
-                145deg,
-                rgba(255, 255, 255, 0.99),
-                rgba(247, 251, 254, 0.97)
-            );
-
-        --card-border:
-            rgba(28, 77, 121, 0.10);
-
-        --card-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.95),
-            0 9px 22px rgba(26, 62, 96, 0.085);
-
-        --switch-bg:
-            rgba(255, 255, 255, 0.94);
-
-        --social-bg:
-            rgba(255, 255, 255, 0.96);
-    }
-
-
-    /* =====================================================
-       CAMADA FIXA DO CORAÇÃO
-       ===================================================== */
-
-    .background-effects {
-        position: fixed;
-
-        inset: 0;
-
-        width: 100%;
-
-        /*
-           LVH = maior viewport possível.
-
-           Não cria aquele espaço no final quando
-           a barra do navegador mobile desaparece.
-        */
-
-        height: 100lvh;
-        min-height: 100lvh;
-
-        overflow: hidden;
-
-        pointer-events: none;
-
-        contain: layout paint;
-    }
-
-
-    /*
-       O fundo principal já possui as manchas
-       através dos radial-gradients.
-
-       Assim economizamos duas grandes camadas.
-    */
-
-    .background-effects__blue,
-    .background-effects__pink {
-        display: none;
-    }
-
-
-    /* =====================================================
-       CORAÇÃO
-       ===================================================== */
-
-    .campaign-heart {
-        position: absolute;
-
-        left: 50%;
-        right: auto;
-
-        top: auto;
-
-        /*
-           Preso ao fundo da MAIOR viewport.
-
-           Não acompanha expansão/redução
-           das barras do navegador.
-        */
-
-        bottom: -15lvh;
-
-        width: min(150vw, 650px);
-        max-width: none;
-
-        height: auto;
-
-        opacity: var(--heart-opacity);
-
-        /*
-           O blur já está no WebP.
-           Nenhum blur calculado pelo navegador.
-        */
-
-        filter: none;
-
-        transform:
-            translate3d(-50%, 0, 0)
-            rotate(-8deg)
-            scale(1.04);
-
-        transform-origin: center;
-
-        pointer-events: none;
-
-        backface-visibility: hidden;
-
-        contain: paint;
-
-        transition: none !important;
-    }
-
-
-    /* =====================================================
-       CARDS — SEM BACKDROP FILTER
-       ===================================================== */
-
-    #theme-switch,
-    .link-card,
-    .social-link {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-
-
-    /* =====================================================
-       CARDS
-       ===================================================== */
-
-    .link-card {
-        background: var(--card-bg);
-
-        border-color: var(--card-border);
-
-        box-shadow: var(--card-shadow);
-
-        transition: none !important;
-
-        touch-action: manipulation;
-
-        -webkit-tap-highlight-color:
-            rgba(235, 46, 139, 0.08);
-    }
-
-
-    .link-card:hover {
-        transform: none;
-
-        background: var(--card-bg);
-
-        box-shadow: var(--card-shadow);
-    }
-
-
-    .link-card:active {
-        transform: none;
-
-        opacity: 0.90;
-    }
-
-
-    /* =====================================================
-       ÍCONES
-       ===================================================== */
-
-    .link-card__icon {
-        box-shadow:
-            inset 0 0 0 1px
-            rgba(235, 46, 139, 0.035);
-    }
-
-
-    /* =====================================================
-       SWITCH
-       ===================================================== */
-
-    #theme-switch {
-        box-shadow:
-            0 7px 17px
-            rgba(12, 42, 73, 0.07);
-
-        touch-action: manipulation;
-
-        -webkit-tap-highlight-color: transparent;
-
-        transition: none !important;
-    }
-
-
-    /*
-       Esta continua sendo praticamente
-       a única animação importante do mobile.
-    */
-
-    .theme-switch__indicator {
-        transition:
-            transform 0.16s
-            cubic-bezier(
-                0.22,
-                1,
-                0.36,
-                1
-            ) !important;
-    }
-
-
-    /* =====================================================
-       REDES SOCIAIS
-       ===================================================== */
-
-    .social-link {
-        background: var(--social-bg);
-
-        box-shadow:
-            0 8px 20px
-            rgba(9, 35, 66, 0.09);
-
-        transition: none !important;
-
-        touch-action: manipulation;
-
-        -webkit-tap-highlight-color:
-            rgba(235, 46, 139, 0.08);
-    }
-
-
-    .social-link:hover,
-    .social-link:active {
-        transform: none;
-    }
-
-
-    /* =====================================================
-       FOTO
-       ===================================================== */
-
-    .profile-image-wrapper {
-        box-shadow:
-            0 13px 30px
-            rgba(15, 54, 91, 0.11);
-    }
-
-
-    /* =====================================================
-       TROCA DE TEMA
-       ===================================================== */
-
-    body,
-    .profile-image-wrapper,
-    .profile-username,
-    .link-card__label,
-    .link-card__icon,
-    .link-card__arrow,
-    .social-link,
-    .site-footer,
-    .site-footer p,
-    .site-footer a {
-        transition: none !important;
     }
 }
